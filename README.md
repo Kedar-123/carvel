@@ -49,9 +49,9 @@ You can configure the following:
 
 |Parameter|Description|Type|Default|
 |---------|-----------|----|-------|
-|metrics.enabled|Start a sidecar prometheus exporter to expose Apache metrics|string|FALSE|
-|metrics.serviceMonitor.enabled|if true, creates a Prometheus Operator PodMonitor (also requires metrics.enabled to be true|string|FALSE|
-|metrics.prometheusRule.enabled|if true, creates a Prometheus Operator PodMonitor (also requires metrics.enabled to be true and metrics.prometheusRule.rules)|string|FALSE|
+|metrics.enabled|Start a sidecar prometheus exporter to expose Apache metrics|string|false|
+|metrics.serviceMonitor.enabled|if true, creates a Prometheus Operator PodMonitor (also requires metrics.enabled to be true|string|false|
+|metrics.prometheusRule.enabled|if true, creates a Prometheus Operator PodMonitor (also requires metrics.enabled to be true and metrics.prometheusRule.rules)|string|false|
 |metrics.prometheusRule.namespace|Namespace for the PrometheusRule Resource (defaults to the Release Namespace)|string|""|
 |metrics.prometheusRule.labels|Labels that can be used so PrometheusRule will be discovered by Prometheus|string|{}|
 |metrics.prometheusRule.rules|Prometheus Rule definitions|string|[]|
