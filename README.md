@@ -28,3 +28,35 @@ You can configure the following:
 |containerPorts.https|Apache server HTTPS container port|integer|8443|
 |containerSecurityContext.runAsUser|Set Apache Server containers' Security Context runAsUser|integer|1001|
 |containerSecurityContext.runAsNonRoot|Set Controller container's Security Context runAsNonRoot|string|true|
+
+### Traffic Exposure parameters
+
+|Parameter|Description|Type|Default|
+|---------|-----------|----|-------|
+|ingress.pathType|Ingress path type|string|ImplementationSpecific|
+|ingress.path|Default path for the ingress record|string|/|
+
+### Other Parameters
+
+|Parameter|Description|Type|Default|
+|---------|-----------|----|-------|
+|autoscaling.minReplicas|Minimum number of replicas to scale back|integer|1|
+|autoscaling.maxReplicas|Maximum number of replicas to scale out|integer|11|
+|autoscaling.targetCPU|Target CPU utilization percentage|integer|50|
+|autoscaling.targetMemory|Target Memory utilization percentage|integer|50|
+
+#### Metrics Parameters
+
+|Parameter|Description|Type|Default|
+|---------|-----------|----|-------|
+|metrics.enabled|Start a sidecar prometheus exporter to expose Apache metrics|string|FALSE|
+|metrics.serviceMonitor.enabled|if true, creates a Prometheus Operator PodMonitor (also requires metrics.enabled to be true|string|FALSE|
+|metrics.prometheusRule.enabled|if true, creates a Prometheus Operator PodMonitor (also requires metrics.enabled to be true and metrics.prometheusRule.rules)|string|FALSE|
+|metrics.prometheusRule.namespace|Namespace for the PrometheusRule Resource (defaults to the Release Namespace)|string|""|
+|metrics.prometheusRule.labels|Labels that can be used so PrometheusRule will be discovered by Prometheus|string|{}|
+|metrics.prometheusRule.rules|Prometheus Rule definitions|string|[]|
+
+
+
+
+
